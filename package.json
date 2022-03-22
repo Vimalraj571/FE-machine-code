@@ -1,0 +1,28 @@
+{
+  "name": "fe-machine-code",
+  "version": "1.0.0",
+  "description": "FEMC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vimalraj571/FE-machine-code.git"
+  },
+  "keywords": [],
+  "author": "Vimal Raj",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  },  
+  "bugs": {
+    "url": "https://github.com/Vimalraj571/FE-machine-code/issues"
+  },
+  "homepage": "https://github.com/Vimalraj571/FE-machine-code#readme"
+}
