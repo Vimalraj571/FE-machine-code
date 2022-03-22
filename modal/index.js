@@ -18,8 +18,3 @@ closeBtn.addEventListener("click", () => {
     modalContent.style.display = "none";
   }
 });
-
-window.addEventListener("click", (e) => {
-  console.log(modalContent);
-  console.log(e.target);
-});

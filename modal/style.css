@@ -1,9 +1,15 @@
+.body{
+  margin: 0;
+  padding: 0;
+}
+
 .main {
   padding: 20%;
   text-align: center;
 }
 
 #modal-id {
+  height:6.5rem;
   display: none;
   position: fixed;
   z-index: 1;
@@ -17,8 +23,8 @@
   text-align: center;
   padding: 1%;
   border-radius: 10px;
-  animation-name: animate;
-  animation-duration: 0.4s;
+  /* animation-name: animate;
+  animation-duration: 0.4s; */
 }
 
 .heading {
@@ -40,11 +46,12 @@
   box-shadow: 3px 3px 10px 5px #7e7e7e;
 }
 
+/* 
 @keyframes animate {
   from {
-    top: -100px;
+    top: -300px;
   }
   to {
     top: 0px;
   }
-}
+} */
