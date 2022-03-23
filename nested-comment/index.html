@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nested Commands</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+    <div>
+        <ul id="comments">
+            <li>test1</li>
+            <ul>
+                <li>
+                    test2
+                    <ul>
+                        <li style="display: flex;flex-direction: column;">
+                            test3
+                            <span id="add-reply"><p>Add replay</p></span>
+                            <span>
+                                <input name="comment-input" type="text" placeholder="Enter the comment" />
+                                <input type="button" value="Submit" name="comment-input" style="width: 5rem;" />
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <li>test2
+            <li>test3</li>
+            <li>test4</li>
+            <!--
+                <li style="display: flex;flex-direction: column;width: 20%;">This is one Comment
+                <input name="comment-input" type="text" placeholder="Enter the comment" />
+                <input type="button" value="Submit" name="comment-input" style="width: 5rem;" />
+                <li style="display: flex;flex-direction: column;width: 20%;">This is one Comment
+                    <input name="comment-input" type="text" placeholder="Enter the comment" />
+                    <input type="button" value="Submit" name="comment-input" style="width: 5rem;" />
+                    <li style="display: flex;flex-direction: column;width: 20%;">This is one Comment
+                        <input name="comment-input" type="text" placeholder="Enter the comment" />
+                        <input type="button" value="Submit" name="comment-input" style="width: 5rem;" />
+                    </li>
+                </li>
+            </li>
+            <li style="display: flex;flex-direction: column;width: 20%;">This is one Comment
+                <input name="comment-input" type="text" placeholder="Enter the comment" />
+                <input type="button" value="Submit" name="comment-input" style="width: 5rem;" />
+            </li> 
+            -->
+        </ul>
+    </div>
+    <script src="./index.js"></script>
 </body>
+
 </html>
