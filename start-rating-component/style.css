@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  font-size: xxx-large;
+}
+
+.star-hover-yellow {
+  color: rgb(255, 255, 128);
+}
+
+.star-yellow {
+  color: yellow;
+}
+
+.star-black {
+  color: black;
+}
