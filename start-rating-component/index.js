@@ -1,14 +1,17 @@
 console.log("Star Component");
 
 const star = document.querySelectorAll(".star");
+const ratingDom = document.querySelector(".rating");
 
 const eventHandle = (e) => {
   star.forEach((item, index) => {
     if (e.type === "click") {
       if (e.target.currStarIndex + 1 > index) {
         item.classList.add("star-yellow");
+        ratingDom.innerHTML = `Your rating is : ${e.target.currStarIndex + 1}`;
       } else {
         item.classList.remove("star-yellow");
+        ratingDom.innerHTML = `Your rating is : ${e.target.currStarIndex + 1}`;
       }
     }
     if (e.type === "mouseover") {
