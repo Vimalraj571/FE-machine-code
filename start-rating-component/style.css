@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Work Sans", "Work Sans", sans-serif;
 }
 
 .star {
@@ -9,6 +10,7 @@
 }
 
 .star-hover-yellow {
+  cursor: pointer;
   color: rgb(255, 255, 128);
 }
 
@@ -18,4 +20,9 @@
 
 .star-black {
   color: black;
+}
+
+.rating{
+  text-align: center;
+  font-family: "Work Sans", "Work Sans", sans-serif;
 }
