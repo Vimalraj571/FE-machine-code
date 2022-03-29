@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  text-align: center;
+  text-align: -webkit-center;
+  padding-top: 10%;
+}
+
+td {
+  height: 50px;
+  width: 50px;
+}
+
+.box-white {
+  background: rgb(236, 236, 236);
+}
+
+.box-black {
+  background: black;
+}
+
+.box-yellow {
+  background: yellow;
+}
