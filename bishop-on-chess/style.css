@@ -18,6 +18,6 @@ td {
   background: black;
 }
 
-.box-yellow {
-  background: yellow;
+.box-blue {
+  background: rgb(24, 20, 255);
 }

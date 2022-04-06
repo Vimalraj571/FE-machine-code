@@ -1,67 +1,111 @@
 console.log("Bishop Guy");
 
 const parseId = (id) => {
-  // console.log(id.split("-"));
   const idArr = id.split("-");
   return idArr;
 };
+
 const body = document.querySelector(".container");
+const table = document.createElement("table");
 const tableBody = document.createElement("tbody");
 
 const paintColor = (e) => {
-  // console.log(e.target.id);
   const id = parseId(e.target.id);
-  const [x, y] = [id[1], id[2]];
-  console.log(x, y);
-  // same diagonal like
-  // -2 diagonals
-  // x+y ==
+  /*
+  x, y is current mouse pointer td (table data cell)
+                      ___________________
+                      |"       |        "|
+                      |  "     |      "  |
+ (x to 0)  (y to 8)   |   "    |    "    |  (x to 8)  (y to 8)
+    x--        y++    |     "  |  "      |    x++        y++  
+                      |_______"|"________|
+                      |       "|"        |
+                      |     "  |  "      |
+  (x to 0)  (y to 0)  |    "   |    "    |
+    x--        y--    |  "     |       " |  (x to 8)  (y to 0)
+                      |"       |        "|    x++       y--
+                      ____________________
+  
+  */
 
-  e.target.setAttribute("class", "box-yellow");
+  let [x, y] = [id[1], id[2]];
+  // positive , positive quadrant
+  while (x < 8 && y < 8) {
+    table.rows[x].cells[y].setAttribute("class", "box-blue");
+    x++;
+    y++;
+  }
 
-  //   (x,y)
-  //   (x-1,x-1)
-  //   (x-2,x-2)
-  //   for (let i = x; i < 8; i++) {
-  //     for (let j = y; j < 8; j++) {
-  //       console.log(`${i} ${j}`);
-  //         if (x === i && y === j) {
-  //          document.querySelector(`#id${i}-${j}`).classList.add("box-yellow");
-  //         } else {
-  //         }
-  //         console.log(e.target);
-  //         console.log()
-  //         if (i + j === x + y) {
-  //           console.log(e.target.classList.add("box-yellow"));
-  //         }
-  //     }
-  //   }
+  [x, y] = [id[1], id[2]];
+  // negative , negative quadrant
+  while (x >= 0 && y >= 0) {
+    table.rows[x].cells[y].setAttribute("class", "box-blue");
+    x--;
+    y--;
+  }
+
+  [x, y] = [id[1], id[2]];
+  // negative , positive quadrant
+  while (x >= 0 && y < 8) {
+    table.rows[x].cells[y].setAttribute("class", "box-blue");
+    x--;
+    y++;
+  }
+
+  [x, y] = [id[1], id[2]];
+  // posistive ,negative quadrant
+  while (x < 8 && y >= 0) {
+    table.rows[x].cells[y].setAttribute("class", "box-blue");
+    x++;
+    y--;
+  }
 };
 
-for (let i = 0; i < 8; i++) {
-  const tr = document.createElement("tr");
-  for (let j = 0; j < 8; j++) {
-    const td = document.createElement("td");
-    tr.appendChild(td);
-    if ((i + j) % 2 === 0) {
-      td.setAttribute("class", "box box-white");
-      td.setAttribute("id", `id-${i}-${j}`);
-      td.addEventListener("mouseover", paintColor);
-    } else {
-      td.setAttribute("class", "box box-black");
-      td.setAttribute("id", `id-${i}-${j}`);
-      td.addEventListener("mouseover", paintColor);
+const init = () => {
+  for (let i = 0; i < 8; i++) {
+    const tr = document.createElement("tr");
+    for (let j = 0; j < 8; j++) {
+      const td = document.createElement("td");
+      tr.appendChild(td);
+      if ((i + j) % 2 === 0) {
+        td.setAttribute("class", "box box-white");
+        td.setAttribute("id", `id-${i}-${j}`);
+        td.addEventListener("mouseover", paintColor);
+      } else {
+        td.setAttribute("class", "box box-black");
+        td.setAttribute("id", `id-${i}-${j}`);
+        td.addEventListener("mouseover", paintColor);
+      }
+    }
+    tableBody.appendChild(tr);
+    table.appendChild(tableBody);
+  }
+  body.appendChild(table);
+};
+
+init();
+
+const reset = () => {
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if ((i + j) % 2 === 0) {
+        table.rows[i].cells[j].setAttribute("class", "box-white");
+      } else {
+        table.rows[i].cells[j].setAttribute("class", "box-black");
+      }
     }
   }
-  tableBody.appendChild(tr);
-}
+};
 
-body.appendChild(tableBody);
+tableBody.addEventListener("mouseout", () => {
+  reset();
+});
 
 // paint the diagonal bishop on mouse hover
 // id to track each index
 
 /*
+
         0    1     2     3     4     5     6     7
 
    0  (0,0) (0,1) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7)
@@ -100,6 +144,7 @@ body.appendChild(tableBody);
    6    6    7     8     9    10    11     12    13
 
    7    7    8     9    10    11    12     11    14
+
 
 
 */
